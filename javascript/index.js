@@ -160,7 +160,7 @@ Promise.all([promise1, promise2, promise3, promise4, promise5, promise6, promise
     
     document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`
     
-   document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
     
   })
   .catch((error) => {
