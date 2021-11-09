@@ -156,7 +156,7 @@ const promise8 = obtainInstruction("brusselsSprouts", 7);
 
 Promise.all([promise1, promise2, promise3, promise4, promise5, promise6, promise7, promise8])
   .then( valuesArr => {
-    valuesArr.forEach((promise) => document.querySelector("#brusselsSprouts").innerHTML += `<li>${promise}</li>`)
+    valuesArr.forEach((promise) => {document.querySelector("#brusselsSprouts").innerHTML += `<li>${promise}</li>`})
     
     document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`
     
@@ -167,3 +167,42 @@ Promise.all([promise1, promise2, promise3, promise4, promise5, promise6, promise
     console.log("Something is wrong:", error)
   })
 
+
+/* another way to do it
+
+async function makeBrusselsSprouts() {
+  try {
+
+    const promise1 = obtainInstruction("brusselsSprouts", 0);
+
+    const promise2 = obtainInstruction("brusselsSprouts", 1);
+
+    const promise3 = obtainInstruction("brusselsSprouts", 2);
+
+    const promise4 = obtainInstruction("brusselsSprouts", 3);
+
+    const promise5 = obtainInstruction("brusselsSprouts", 4);
+
+    const promise6 = obtainInstruction("brusselsSprouts", 5);
+
+    const promise7 = obtainInstruction("brusselsSprouts", 6);
+
+    const promise8 = obtainInstruction("brusselsSprouts", 7);
+
+    const valuesArr = await Promise.all([promise1, promise2, promise3, promise4, promise5, promise6, promise7, promise8])
+
+    valuesArr.forEach((promise) => {document.querySelector("#brusselsSprouts").innerHTML += `<li>${promise}</li>`})
+    
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+    
+  }
+   catch ((error) => {
+    console.log("Something is wrong:", error)
+
+  })
+
+}
+
+
+*/
